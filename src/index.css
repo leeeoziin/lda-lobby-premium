@@ -1,0 +1,86 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+* {
+  @apply transition-colors duration-300;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-lda-black text-white font-mono overflow-x-hidden;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-lda-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-lda-yellow rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-lda-yellow-dark;
+}
+
+/* Glass Effect */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.glass-dark {
+  @apply bg-black/20 backdrop-blur-lg border border-white/5;
+}
+
+/* Glow Effects */
+.glow-yellow {
+  @apply shadow-neon-yellow;
+}
+
+.glow-yellow-lg {
+  @apply shadow-neon-yellow-lg;
+}
+
+/* Gradient Background */
+.gradient-bg {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+}
+
+/* Neon Border */
+.neon-border {
+  @apply border border-lda-yellow/30 shadow-neon-yellow;
+}
+
+/* Smooth Animations */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-lda-yellow text-black font-bold rounded-lg hover:bg-lda-yellow-dark transition-all duration-300 hover:shadow-neon-yellow-lg transform hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-lda-gray text-lda-yellow font-bold rounded-lg hover:bg-lda-gray-light transition-all duration-300 neon-border active:scale-95;
+  }
+
+  .card-premium {
+    @apply glass rounded-xl p-6 hover:shadow-neon-yellow hover:border-lda-yellow/50 transition-all duration-300;
+  }
+
+  .input-premium {
+    @apply bg-lda-dark border border-lda-yellow/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-lda-yellow focus:shadow-neon-yellow transition-all duration-300;
+  }
+
+  .stat-card {
+    @apply glass rounded-lg p-4 text-center hover:shadow-neon-yellow transition-all duration-300;
+  }
+}
